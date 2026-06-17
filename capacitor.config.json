@@ -1,0 +1,6 @@
+{
+  "appId": "com.ieltsplanner.app",
+  "appName": "IELTS Planner",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
