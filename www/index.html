@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ar" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS B2 to C1 Coach & Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                </div>
+                <span class="logo-title" data-t-key="title">IELTS B2 to C1 Coach</span>
+            </div>
+
+            <!-- Profile / Current Status Card -->
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                    <div class="profile-info">
+                        <h4 data-t-key="coach">Your IELTS Coach</h4>
+                        <p>B2 ➔ C1 Target</p>
+                    </div>
+                </div>
+                <div class="level-badges">
+                    <span class="level-badge b2" data-t-key="currentLevel">B2 (5.5-6.5)</span>
+                    <span class="level-arrow">➔</span>
+                    <span class="level-badge c1" data-t-key="targetLevel">C1 (7.5-8.0)</span>
+                </div>
+                <div class="progress-container-mini">
+                    <div class="progress-header-mini">
+                        <span data-t-key="daysProgress">Roadmap Progress</span>
+                        <span id="progress-percent-sidebar">0%</span>
+                    </div>
+                    <div class="progress-bar-mini-bg">
+                        <div class="progress-bar-mini-fill" id="progress-bar-fill-sidebar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-menu">
+                <li class="nav-item active" data-tab="dashboard">
+                    <button>
+                        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                        <span data-t-key="dashboard">Dashboard</span>
+                    </button>
+                </li>
+                <li class="nav-item" data-tab="planner">
+                    <button>
+                        <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+                        <span data-t-key="planner">70-Day Planner</span>
+                    </button>
+                </li>
+                <li class="nav-item" data-tab="dailyTask">
+                    <button>
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                        <span data-t-key="dailyTask">Daily Practice</span>
+                    </button>
+                </li>
+                <li class="nav-item" data-tab="aiLab">
+                    <button>
+                        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+                        <span data-t-key="aiLab">AI Practice Lab</span>
+                    </button>
+                </li>
+                <li class="nav-item" data-tab="resources">
+                    <button>
+                        <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+                        <span data-t-key="resources">Free Resources</span>
+                    </button>
+                </li>
+                <li class="nav-item" data-tab="progress">
+                    <button>
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        <span data-t-key="progress">Progress Tracker</span>
+                    </button>
+                </li>
+                <li class="nav-item" data-tab="error-book">
+                    <button>
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                        <span data-t-key="errorBook">Error Log Book</span>
+                    </button>
+                </li>
+                <li class="nav-item" data-tab="settings">
+                    <button>
+                        <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                        <span data-t-key="settings">Coach Settings</span>
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Sidebar Footer Settings -->
+            <div class="sidebar-footer">
+                <button class="lang-toggle-btn" id="lang-toggle">عربي</button>
+                <button class="theme-toggle-btn" id="theme-toggle">
+                    <svg viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-1-.45-1-1zm-6.01-15.42c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.01c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Body Content -->
+        <main class="main-content">
+            <!-- Top Dashboard Bar -->
+            <div class="top-bar">
+                <div class="page-title">
+                    <h1 data-t-key="title">IELTS B2 to C1 Coach & Planner</h1>
+                    <p data-t-key="welcomeCoach">Hello, I am your IELTS Coach. Let's elevate your English to Band 8.0+ (C1/C2)!</p>
+                </div>
+                <div class="stat-badges">
+                    <div class="stat-badge days-left">
+                        <span data-t-key="daysRemaining">Days Remaining</span>: <span id="top-bar-days-left">70</span>
+                    </div>
+                    <div class="stat-badge tasks-done">
+                        <span data-t-key="completedText">Completed Days</span>: <span id="top-bar-tasks-done">0/70</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 1: Dashboard Home -->
+            <section class="tab-section active" id="dashboard-section">
+                <div class="dashboard-grid">
+                    <!-- Left: Coach welcome and active daily summary -->
+                    <div class="card">
+                        <div class="card-title">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                            <span data-t-key="coach">Your IELTS Coach (25 Years Exp)</span>
+                        </div>
+                        <div style="line-height: 1.6; font-size: 0.95rem;">
+                            <p style="margin-bottom: 1rem;" lang="ar">أهلاً بك في كورس الـ 70 يوماً المكثف. كمدرب آيلتس بخبرة 25 عاماً، قمت بتصميم هذا النظام خصيصاً لجسر الفجوة بين مستواك الحالي B2 والمستوى المتقدم C1 (Band 7.5+). يتكون هذا البرنامج من دراسة يومية بمعدل 4 ساعات موزعة بانتظام على المهارات الأربعة، مصحوبة بتقييمات تفاعلية فورية وسجل أخطاء علاجي.</p>
+                            <p style="margin-bottom: 1.5rem;" lang="en">Welcome to your intensive 70-day program. I have structured this program to systematically build your confidence, academic vocabulary, and sentence structures to hit C1 level. To maximize results, practice diligently every day, test yourself, and log every syntax/spelling error in your diagnostic log.</p>
+                            <button class="btn btn-primary" onclick="switchTab('dailyTask')" data-t-key="dailyTask">Go to Today's Tasks</button>
+                        </div>
+                    </div>
+
+                    <!-- Right: Fast statistics summary -->
+                    <div class="card">
+                        <div class="card-title">
+                            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"/></svg>
+                            <span data-t-key="progress">Overview Statistics</span>
+                        </div>
+                        <div class="stats-summary-row" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="stat-card-large" style="padding: 1rem;">
+                                <div class="stat-card-val primary" id="home-completed-days">0</div>
+                                <div class="stat-card-lbl" data-t-key="completed">Days Done</div>
+                            </div>
+                            <div class="stat-card-large" style="padding: 1rem;">
+                                <div class="stat-card-val success" id="home-avg-score">0%</div>
+                                <div class="stat-card-lbl" data-t-key="score">Avg Score</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;" onclick="switchTab('progress')" data-t-key="progress">View Full Progress Tracker</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab 2: 70-Day Planner Accordion Grid -->
+            <section class="tab-section" id="planner-section">
+                <div class="weekly-container" id="weeks-container">
+                    <!-- Dynamic weeks injected here -->
+                </div>
+            </section>
+
+            <!-- Tab 3: Daily Task details and simulators -->
+            <section class="tab-section" id="dailyTask-section">
+                <div class="daily-details">
+                    <!-- Left: Day info, skill badges, checklist -->
+                    <div class="card" style="align-self: start;">
+                        <div class="card-title" style="justify-content: space-between;">
+                            <span id="current-day-label">Day 1</span>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button class="btn" id="prev-day-btn" style="padding: 0.4rem 0.8rem;"><span data-t-key="prev">Prev</span></button>
+                                <button class="btn" id="next-day-btn" style="padding: 0.4rem 0.8rem;"><span data-t-key="next">Next</span></button>
+                            </div>
+                        </div>
+                        <h2 id="day-title-details" style="font-size: 1.35rem; font-weight: 800; margin-bottom: 1rem;">IELTS Format Introduction</h2>
+                        
+                        <div class="skills-container" id="skills-badges-details">
+                            <!-- Skill badges -->
+                        </div>
+
+                        <div class="task-list" id="task-list-details">
+                            <!-- Task checklist items -->
+                        </div>
+                    </div>
+
+                    <!-- Right: Resource Hub and active task advice -->
+                    <div class="card" style="align-self: start;">
+                        <div class="card-title">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                            <span data-t-key="coach">Coach's Core Guidelines</span>
+                        </div>
+                        <div style="font-size: 0.9rem; line-height: 1.6; color: var(--text-muted);">
+                            <p style="margin-bottom: 0.75rem;" lang="ar">💡 <strong>إرشاد هام:</strong> تأكد من عدم تجاوز مدة التدريب الإجمالية اليومية من 4 إلى 5 ساعات لتجنب الإرهاق العقلي. التركيز على الكيف وليس الكم.</p>
+                            <p style="margin-bottom: 0.75rem;" lang="en">💡 <strong>Methodology:</strong> Study actively. When reading, always underline keywords. When speaking, record yourself and list down your repetitive terms in the Error Log.</p>
+                            <hr style="border-color: var(--glass-border); margin: 1rem 0;">
+                            <p lang="ar">🎯 <strong>معايير النجاح اليومي:</strong> تحقيق نسبة لا تقل عن 70% في الاختبار التشخيصي اليومي لضمان ثبات المعلومة.</p>
+                        </div>
+                    </div>
+
+                    <!-- Bot: Interactive Daily Quiz & Simulators -->
+                    <div class="card quiz-simulator-card" id="interactive-assessment-box">
+                        <div class="card-title">
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span data-t-key="startQuiz">Diagnostic Post-Task Assessment</span>
+                        </div>
+
+                        <!-- MCQ Quiz Container -->
+                        <div class="quiz-container" id="mcq-quiz-container">
+                            <div class="quiz-passage" id="quiz-passage-text">Passage text...</div>
+                            <div class="quiz-question" id="quiz-question-text">Question text?</div>
+                            <div class="quiz-options" id="quiz-options-list">
+                                <!-- Option list -->
+                            </div>
+                            <div class="quiz-feedback-box" id="quiz-feedback-result">
+                                <div class="feedback-title" id="feedback-result-title">Result</div>
+                                <div class="feedback-explanation" id="feedback-result-explanation">Explanation...</div>
+                            </div>
+                            <div class="quiz-controls">
+                                <button class="btn btn-primary" id="submit-quiz-btn"><span data-t-key="save">Submit Answer</span></button>
+                            </div>
+                        </div>
+
+                        <!-- Writing Simulator Container -->
+                        <div class="quiz-container" id="writing-simulator-container" style="display: none;">
+                            <div class="quiz-question" id="writing-prompt-text">Writing Prompt...</div>
+                            <p class="quiz-q-num" id="writing-tips-text">Tips...</p>
+                            
+                            <textarea class="essay-input-area" id="essay-input" placeholder="Type or paste your academic essay response here... (minimum 150/250 words)"></textarea>
+                            <div class="writing-stats-row">
+                                <div class="stat-item" data-t-key="words">Words: <span id="essay-word-count">0</span></div>
+                                <div class="stat-item" data-t-key="chars">Chars: <span id="essay-char-count">0</span></div>
+                            </div>
+
+                            <button class="btn btn-primary" id="evaluate-writing-btn" style="width: 100%;"><span data-t-key="evaluate">Evaluate Essay</span></button>
+
+                            <!-- Results Board -->
+                            <div class="evaluation-results" id="writing-results-panel">
+                                <div class="eval-score-card">
+                                    <div class="eval-score-circle">
+                                        <span class="score-num" id="writing-band-val">6.0</span>
+                                        <span class="score-lbl">BAND</span>
+                                    </div>
+                                    <div class="eval-feedback-text">
+                                        <h4 data-t-key="gradeModel">Estimated Band Grade</h4>
+                                        <p id="writing-coach-feedback">Detailed feedback from coach...</p>
+                                    </div>
+                                </div>
+
+                                <div class="criteria-grid">
+                                    <div class="criterion-bar-container">
+                                        <div class="criterion-name">
+                                            <span data-t-key="taskAch">Task Response</span>
+                                            <span class="criterion-score" id="score-task-resp">6.0</span>
+                                        </div>
+                                        <div class="criterion-track"><div class="criterion-fill" id="fill-task-resp" style="width: 60%"></div></div>
+                                    </div>
+                                    <div class="criterion-bar-container">
+                                        <div class="criterion-name">
+                                            <span data-t-key="coherence">Coherence & Cohesion</span>
+                                            <span class="criterion-score" id="score-coherence">6.0</span>
+                                        </div>
+                                        <div class="criterion-track"><div class="criterion-fill" id="fill-coherence" style="width: 60%"></div></div>
+                                    </div>
+                                    <div class="criterion-bar-container">
+                                        <div class="criterion-name">
+                                            <span data-t-key="lexical">Lexical Resource</span>
+                                            <span class="criterion-score" id="score-lexical">6.0</span>
+                                        </div>
+                                        <div class="criterion-track"><div class="criterion-fill" id="fill-lexical" style="width: 60%"></div></div>
+                                    </div>
+                                    <div class="criterion-bar-container">
+                                        <div class="criterion-name">
+                                            <span data-t-key="grammatical">Grammar Range & Accuracy</span>
+                                            <span class="criterion-score" id="score-grammar">6.0</span>
+                                        </div>
+                                        <div class="criterion-track"><div class="criterion-fill" id="fill-grammar" style="width: 60%"></div></div>
+                                    </div>
+                                </div>
+
+                                <div class="ai-prompt-box">
+                                    <div class="ai-prompt-header">
+                                        <h5 data-t-key="aiPrompt">Get Detailed Coaching Evaluation (AI)</h5>
+                                        <button class="btn btn-secondary btn-copy-prompt" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;" onclick="copyAIPrompt('writing-ai-prompt-content')">Copy Prompt</button>
+                                    </div>
+                                    <div class="ai-prompt-content" id="writing-ai-prompt-content">Prompt content loaded...</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Speaking Simulator Container -->
+                        <div class="quiz-container" id="speaking-simulator-container" style="display: none;">
+                            <div class="quiz-question" id="speaking-prompt-card">Speaking Cue Card Question...</div>
+                            <p class="quiz-q-num" id="speaking-tips-tips">Tips...</p>
+
+                            <div class="speaking-setup-panel">
+                                <button class="record-btn-glow" id="speak-record-btn">
+                                    <svg viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg>
+                                </button>
+                                
+                                <div class="audio-waveform-container" id="speaking-waveform">
+                                    <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+                                    <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+                                    <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+                                    <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+                                </div>
+
+                                <div class="audio-playback-card" id="speaking-playback-panel">
+                                    <audio id="speaking-audio-player" controls></audio>
+                                </div>
+
+                                <div class="transcription-area" id="speaking-transcription-panel">
+                                    <h5 data-t-key="chatPartner">Speech-to-Text Live Transcription:</h5>
+                                    <div class="transcription-text" id="speaking-transcription-text">Recording speech...</div>
+                                </div>
+
+                                <div class="speaking-analysis-grid" id="speaking-analysis-stats">
+                                    <div class="speaking-stat-card">
+                                        <div class="speaking-stat-val" id="val-spk-band">6.5</div>
+                                        <div class="speaking-stat-lbl">EST. BAND</div>
+                                    </div>
+                                    <div class="speaking-stat-card">
+                                        <div class="speaking-stat-val" id="val-wpm">130</div>
+                                        <div class="speaking-stat-lbl" data-t-key="wpm">Words Per Min</div>
+                                    </div>
+                                    <div class="speaking-stat-card">
+                                        <div class="speaking-stat-val" id="val-fillers">0</div>
+                                        <div class="speaking-stat-lbl" data-t-key="fillers">Filler Words</div>
+                                    </div>
+
+                                    <div class="ai-prompt-box" style="grid-column: span 3; width: 100%;">
+                                        <div class="ai-prompt-header">
+                                            <h5 data-t-key="aiPrompt">Get Detailed Coaching Evaluation (AI)</h5>
+                                            <button class="btn btn-secondary btn-copy-prompt" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;" onclick="copyAIPrompt('speaking-ai-prompt-content')">Copy Prompt</button>
+                                        </div>
+                                        <div class="ai-prompt-content" id="speaking-ai-prompt-content">Speech prompt loaded...</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab 4: AI Practice Lab (Live Chat) -->
+            <section class="tab-section" id="aiLab-section">
+                <div class="dashboard-grid" style="grid-template-columns: 2fr 1fr;">
+                    <!-- Left Column: Chat Partner -->
+                    <div class="card">
+                        <div class="card-title">
+                            <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                            <span data-t-key="chatPartner">Interactive C1 Speaking & Listening Chat Partner</span>
+                        </div>
+                        <div class="chat-container">
+                            <div class="chat-messages" id="chat-messages-container">
+                                <div class="chat-msg examiner">Hello! I am your IELTS Speaking Examiner today. We will practice Speaking Part 3 questions. Are you ready to begin our academic discussion?</div>
+                            </div>
+                            <div class="chat-input-bar">
+                                <input type="text" class="chat-input" id="chat-user-input" placeholder="Type your academic response here...">
+                                <button class="chat-mic-btn" id="chat-mic-trigger">
+                                    <svg viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg>
+                                </button>
+                                <button class="btn btn-primary" id="chat-send-btn"><span data-t-key="save">Send</span></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Topics List -->
+                    <div class="card" style="align-self: start;">
+                        <div class="card-title">
+                            <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                            <span>Topics Directory</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <button class="btn" style="text-align: left; width: 100%; justify-content: start;">1. Higher Education & Careers</button>
+                            <button class="btn" style="text-align: left; width: 100%; justify-content: start;">2. Environmental Protection</button>
+                            <button class="btn" style="text-align: left; width: 100%; justify-content: start;">3. Artificial Intelligence & Tech</button>
+                            <button class="btn" style="text-align: left; width: 100%; justify-content: start;">4. Modern Architecture & Cities</button>
+                            <button class="btn" style="text-align: left; width: 100%; justify-content: start;">5. Globalization & Tourism</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab 5: Resource Vault -->
+            <section class="tab-section" id="resources-section">
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <div class="resource-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            </div>
+                            <span class="resource-name">IELTS Liz</span>
+                        </div>
+                        <p class="resource-desc">Undoubtedly the best free website for IELTS writing, reading, and listening strategies. Contains free video lessons, vocabulary banks, and tips from a certified examiner.</p>
+                        <a href="https://ieltsliz.com/" target="_blank" class="btn btn-primary" style="justify-content: center;">Visit IELTS Liz</a>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <div class="resource-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            </div>
+                            <span class="resource-name">Cambridge Write & Improve</span>
+                        </div>
+                        <p class="resource-desc">A free tool created by Cambridge University. Submit your essays and receive instant automated feedback and CEFR level alignment (B2/C1/C2) within seconds.</p>
+                        <a href="https://writeandimprove.com/" target="_blank" class="btn btn-primary" style="justify-content: center;">Visit Write & Improve</a>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <div class="resource-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            </div>
+                            <span class="resource-name">Cambridge Speak & Improve</span>
+                        </div>
+                        <p class="resource-desc">Cambridge's speech analysis robot. Talk into the microphone to answer examiner questions, and get graded on your pronunciation and speaking speed immediately.</p>
+                        <a href="https://speakandimprove.com/" target="_blank" class="btn btn-primary" style="justify-content: center;">Visit Speak & Improve</a>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <div class="resource-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            </div>
+                            <span class="resource-name">IELTS Online Tests</span>
+                        </div>
+                        <p class="resource-desc">A free repository containing hundreds of actual past IELTS exams for Listening, Reading, and Writing. Excellent for simulating the timed experience of the computer-delivered exam.</p>
+                        <a href="https://ieltsonlinetests.com/" target="_blank" class="btn btn-primary" style="justify-content: center;">Visit IELTS Online Tests</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab 6: Progress Tracker -->
+            <section class="tab-section" id="progress-section">
+                <div class="stats-summary-row">
+                    <div class="stat-card-large">
+                        <div class="stat-card-val primary" id="stat-completed-days">0</div>
+                        <div class="stat-card-lbl" data-t-key="completed">Completed Days</div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-card-val secondary" id="stat-completed-hours">0 hrs</div>
+                        <div class="stat-card-lbl" data-t-key="duration">Total Study Time</div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-card-val success" id="stat-avg-score">0%</div>
+                        <div class="stat-card-lbl" data-t-key="score">Avg Quiz Score</div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-card-val danger" id="stat-est-band">6.0</div>
+                        <div class="stat-card-lbl" data-t-key="bandEstimate">Estimated IELTS Band</div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-bottom: 2rem;">
+                    <div class="card-title">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                        <span data-t-key="daysProgress">70-Day Roadmap Progress Checklist</span>
+                    </div>
+                    <div id="roadmap-progress-grid" style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; padding: 1rem 0;">
+                        <!-- 70 checkboxes -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">
+                        <svg viewBox="0 0 24 24"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
+                        <span data-t-key="weeklyReview">Quiz & Diagnostic Assessment History</span>
+                    </div>
+                    <div class="history-list" id="quiz-history-list">
+                        <!-- Scores history list -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab 7: Error Log Book -->
+            <section class="tab-section" id="error-book-section">
+                <div class="dashboard-grid">
+                    <!-- Left Column: Add entry -->
+                    <div class="card" style="align-self: start;">
+                        <div class="card-title">
+                            <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                            <span data-t-key="addError">Add New Mistake to Remedial Plan</span>
+                        </div>
+                        <div class="settings-group">
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <label style="font-size: 0.8rem; font-weight: 600;" data-t-key="errorType">Error Category</label>
+                                <select class="error-select" id="error-type-select">
+                                    <option value="" disabled selected data-t-key="typeSelectPlaceholder">Select category</option>
+                                    <option value="grammar" data-t-key="grammar">Grammar / Syntax</option>
+                                    <option value="spelling" data-t-key="spelling">Spelling</option>
+                                    <option value="pronunciation" data-t-key="pronunciation">Pronunciation</option>
+                                    <option value="lexical" data-t-key="lexical">Vocabulary Choice</option>
+                                </select>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <label style="font-size: 0.8rem; font-weight: 600;" data-t-key="originalText">My Mistake</label>
+                                <input type="text" class="error-input" id="error-original-input" placeholder="e.g. He do not have enough money...">
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <label style="font-size: 0.8rem; font-weight: 600;" data-t-key="correctedText">Corrected Version</label>
+                                <input type="text" class="error-input" id="error-corrected-input" placeholder="e.g. He does not have sufficient funds...">
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <label style="font-size: 0.8rem; font-weight: 600;" data-t-key="notes">Grammar Rule / Notes</label>
+                                <input type="text" class="error-input" id="error-notes-input" placeholder="Subject-verb agreement. In writing, use formal 'sufficient funds'.">
+                            </div>
+                            <button class="btn btn-primary" id="save-error-btn" style="justify-content: center;"><span data-t-key="save">Save to Log</span></button>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: List of errors -->
+                    <div class="card">
+                        <div class="card-title">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                            <span data-t-key="errorLogTitle">Active Error Log & Remedial Plan</span>
+                        </div>
+                        <div class="error-list" id="active-error-list">
+                            <!-- Injected errors -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab 8: Coach Settings -->
+            <section class="tab-section" id="settings-section">
+                <div class="card" style="max-width: 600px; margin: 0 auto;">
+                    <div class="card-title">
+                        <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                        <span data-t-key="settings">Coach & Study Settings</span>
+                    </div>
+
+                    <div class="settings-group">
+                        <div class="setting-row">
+                            <div class="setting-info">
+                                <h5 data-t-key="settings">Reset All Progress</h5>
+                                <p>Permanently erase all task checkboxes, error log entries, and test scores.</p>
+                            </div>
+                            <button class="btn" style="background: var(--danger); border-color: var(--danger); color: #fff;" onclick="resetAllUserProgress()">Reset Data</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Core App JS -->
+    <script src="app.js"></script>
+</body>
+</html>
