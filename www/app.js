@@ -60,7 +60,7 @@ const CURRICULUM = {
                     titleAR: "اليوم 1: اختبار تحديد المستوى ومقدمة الامتحان",
                     skills: ["listening", "reading"],
                     tasks: [
-                        { nameEN: "Watch IELTS format overview", nameAR: "مشاهدة نظرة عامة على شكل اختبار الآيلتس", duration: 30, resource: "IELTS Format Guide", link: "https://www.youtube.com/watch?v=sRMEBWUULs8" },
+                        { nameEN: "Read IELTS format overview", nameAR: "قراءة الدليل الشامل لشكل اختبار الآيلتس", duration: 30, resource: "IELTS Liz Format Guide", link: "https://ieltsliz.com/ielts-exam-information/" },
                         { nameEN: "Take mini Diagnostic Reading test", nameAR: "إجراء اختبار قراءة تشخيصي مصغر", duration: 60, resource: "IELTS Online Tests", link: "https://ieltsonlinetests.com/ielts-exam-library#academic" },
                         { nameEN: "Take mini Diagnostic Listening test", nameAR: "إجراء اختبار استماع تشخيصي مصغر", duration: 60, resource: "IELTS Online Tests", link: "https://ieltsonlinetests.com/ielts-exam-library#listening" },
                         { nameEN: "Establish your error log database", nameAR: "إنشاء قاعدة بيانات سجل الأخطاء الخاصة بك", duration: 30, resource: "Local Dashboard Log", link: "#" }
