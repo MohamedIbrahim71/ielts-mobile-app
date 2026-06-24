@@ -1755,14 +1755,26 @@ input:checked + .slider:before {
 
 /* Responsive Grid Adjustments */
 @media (max-width: 1024px) {
+    html {
+        font-size: 12px;
+    }
+    
+    html, body {
+        max-width: 100vw;
+        overflow-x: hidden;
+        position: relative;
+    }
+    
     .app-container {
         grid-template-columns: 1fr;
+        max-width: 100vw;
+        overflow-x: hidden;
     }
     
     .sidebar {
         height: auto;
         position: relative;
-        padding: 1.5rem;
+        padding: 1rem;
     }
     
     .nav-menu {
@@ -1770,15 +1782,20 @@ input:checked + .slider:before {
         overflow-x: auto;
         padding-bottom: 0.5rem;
         flex-grow: 0;
+        -webkit-overflow-scrolling: touch;
     }
     
     .nav-item button {
         white-space: nowrap;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
     }
     
     .main-content {
         height: auto;
-        padding: 1.5rem;
+        padding: 1rem;
+        max-width: 100vw;
+        overflow-x: hidden;
     }
     
     .dashboard-grid, .daily-details {
@@ -1788,11 +1805,15 @@ input:checked + .slider:before {
     .quiz-simulator-card {
         grid-column: span 1;
     }
-}
-
-@media (max-width: 640px) {
-    html {
-        font-size: 13px;
+    
+    .card {
+        padding: 1rem;
+        max-width: 100%;
+    }
+    
+    .page-title h1 {
+        font-size: 1.4rem;
+        word-wrap: break-word;
     }
     
     .stats-summary-row {
@@ -1817,26 +1838,5 @@ input:checked + .slider:before {
     .sidebar-footer {
         width: 100%;
         justify-content: space-around;
-    }
-    
-    .main-content {
-        padding: 1rem;
-    }
-    
-    .sidebar {
-        padding: 1rem;
-    }
-    
-    .nav-item button {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.85rem;
-    }
-    
-    .card {
-        padding: 1rem;
-    }
-    
-    .page-title h1 {
-        font-size: 1.5rem;
     }
 }
