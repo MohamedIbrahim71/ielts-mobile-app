@@ -1791,6 +1791,10 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 640px) {
+    html {
+        font-size: 13px;
+    }
+    
     .stats-summary-row {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1813,5 +1817,26 @@ input:checked + .slider:before {
     .sidebar-footer {
         width: 100%;
         justify-content: space-around;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .sidebar {
+        padding: 1rem;
+    }
+    
+    .nav-item button {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .card {
+        padding: 1rem;
+    }
+    
+    .page-title h1 {
+        font-size: 1.5rem;
     }
 }
